@@ -1,14 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import React from "react";
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+//import Quote from "./Quote";
+import Quotes from "./Quotes";
+import Lamp from "./Lamp";
 
-function App() {
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit <code>src/App.js</code> and save to reload this React App.
         </p>
         <a
           className="App-link"
@@ -21,6 +25,28 @@ function App() {
       </header>
     </div>
   );
+}*/
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Simpsons Quotes</h1>
+        </header>
+        <Lamp on />
+        <Lamp />
+        <Quotes />
+        {/*
+        <Quotes
+          quote="I believe the children are the future... Unless we stop them now!"
+          character="Homer Simpson"
+          image="https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FHomerSimpson.png?1497567511939"
+        />*/}
+      </div>
+    );
+  }
 }
 
 export default App;
