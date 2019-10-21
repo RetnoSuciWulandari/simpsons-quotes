@@ -3,42 +3,42 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 //import Quote from "./Quote";
-import Quotes from "./Quotes";
-import Lamp from "./Lamp";
-
-/*function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload this React App.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}*/
+//import Quotes from "./Quotes";
+//import Lamp from "./Lamp";
 
 class App extends Component {
+  state = {
+    working: true
+  };
+
+  handleClick = () => {
+    //console.log(this.state.working);
+    this.setState({ working: !this.state.working });
+  };
+
+  renderCSS() {
+    if (this.state.working) {
+      return "working";
+    } else {
+      return "notworking";
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Simpsons Quotes</h1>
+          <button
+            className={this.renderCSS()}
+            onClick={this.handleClick}
+          ></button>
         </header>
+        {/*
         <Lamp on />
         <Lamp />
         <Quotes />
-        {/*
         <Quotes
           quote="I believe the children are the future... Unless we stop them now!"
           character="Homer Simpson"
